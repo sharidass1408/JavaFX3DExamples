@@ -34,14 +34,14 @@ javafx {
     version = "13"
     modules = [ 'javafx.controls', 'javafx.fxml']
 }
-mainClassName = 'Apress.Shape3DPropertiesExample'
+mainClassName = 'Apress.SphereWithEvents'
 
 jar {
 
     manifest {
         attributes (
                 'Implementation-Title' : 'Jar Making Example',
-                'Main-Class': 'Apress.Shape3DPropertiesExample'
+                'Main-Class': 'Apress.SphereWithEvents'
         )
 
     }
