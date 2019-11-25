@@ -104,10 +104,6 @@ public class MeshCube extends Application {
         primaryStage.setTitle("MeshCube");
 
         Image diffuseMap = new Image(getClass().getClassLoader().getResourceAsStream("cbGn_pof-bm.png"));
-        /*Image diffuseMap =
-                new Image(MeshCube.class
-                        .getResource("cbGn_pof-bm.png")
-                        .toExternalForm());*/
 
         PhongMaterial earthMaterial = new PhongMaterial();
         earthMaterial.setDiffuseMap(diffuseMap);
