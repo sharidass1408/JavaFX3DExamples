@@ -34,14 +34,14 @@ javafx {
     version = "13"
     modules = [ 'javafx.controls', 'javafx.fxml']
 }
-mainClassName = 'Apress.LightExample'
+mainClassName = 'Apress.Shape3DPropertiesExample'
 
 jar {
 
     manifest {
         attributes (
                 'Implementation-Title' : 'Jar Making Example',
-                'Main-Class': 'Apress.LightExample'
+                'Main-Class': 'Apress.Shape3DPropertiesExample'
         )
 
     }
