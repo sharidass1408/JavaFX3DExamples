@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+group 'com.ltdrive'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://www.nexus.ford.com/repository/thirdparty'
+    }
+    maven {
+        url 'https://mvnrepository.com/artifact/com.hynnet/jacob'
+    }
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+
+}
+
+dependencies {
+    compile group: 'de.jensd', name: 'fontawesomefx', version: '8.9'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+apply plugin: "org.openjfx.javafxplugin"
+
+javafx {
+    version = "13"
+    modules = [ 'javafx.controls', 'javafx.fxml']
+}
+mainClassName = 'Apress.CanvasExample'
+
+jar {
+
+    manifest {
+        attributes (
+                'Implementation-Title' : 'Jar Making Example',
+                'Main-Class': 'Apress.CanvasExample'
+        )
+
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    exclude("**/**.SF")
+    exclude("**/**.RSA")
+    exclude("**/**.DSA")
+
+    destinationDirectory = file("$rootDir/my-jar")
+    archivesBaseName = 'LTDrive'
+
+}
+
+
